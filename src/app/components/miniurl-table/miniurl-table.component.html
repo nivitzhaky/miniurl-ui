@@ -1,0 +1,161 @@
+<div class="container-fluid">
+    <div class="row page-title-div">
+        <div class="col-sm-6">
+            <h1 class="title">Mini URL</h1>
+            <!-- <p class="sub-title">One stop solution for perfect admin dashboard!</p> -->            
+        </div>
+        <!-- /.col-sm-6 -->
+        <div class="col-sm-6 right-side">
+            <div class="dropdown pull-right" dropdown>
+            	<button dropdownToggle class="btn btn-default dropdown-toggle" type="button" id="menu14" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            		<i class="fa fa-bars"></i> {{username}}
+            		<span class="caret"></span>
+            	</button>
+            	<ul *dropdownMenu class="dropdown-menu bg-gray" aria-labelledby="menu14">
+                <li id="loginout" ><a href="#" (click)='myshow(staticModal)'
+                  >{{loginouttext}}</a></li>
+              </ul>
+                 <!-- Modal -->
+                 <div class="modal fade " bsModal id="modal2" tabindex="-1" role="dialog" #staticModal="bs-modal" [config]="{backdrop: 'static'}">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header draggable-handle">
+                                <h4 class="modal-title" id="modal2Label"><i class="fa fa-arrows"></i> LOGIN <button type="button" class="close" (click)="staticModal.hide()" aria-label="Close"><span aria-hidden="true">×</span></button></h4>
+                            </div>
+                            <div class="modal-body">
+                                <!-- <div class="panel">
+              
+                                    <div class="panel-body">
+                  
+                                        <form class="p-20"> -->
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                    <label  for="name13">USER</label>
+                                                    <input type="text" class="form-control" id="loginusername" name="username" [(ngModel)]="username">  
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        <!-- </form>
+                                    </div>
+                                </div>                            </div> -->
+                            <div class="modal-footer">
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-gray btn-wide btn-rounded" (click)="mylogin(staticModal)"><i class="fa fa-times"></i>LOGIN</button>
+                                </div>
+                                <!-- /.btn-group -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.col-sm-6 text-right -->
+    </div>
+    <!-- /.row -->
+    <!-- /.row -->
+</div>
+<section class="section">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+              <div class="panel">
+                  <div class="panel-heading">
+                      <div class="panel-title">
+                          <h5>Create URL</h5>
+                      </div>
+                  </div>
+                  <div class="panel-body">
+
+                      <form class="p-20">
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                  <label for="name13">URL</label>
+                                  <input type="text" class="form-control" id="name13" name="url" [(ngModel)]="addurl">  
+                                </div>
+                              </div>
+                              <!-- /.col-md-6 -->
+
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                  <label for="username13">Alias</label>
+                                  <input type="text" class="form-control" id="username13" name="alias" [(ngModel)]="addalias">
+                                </div>
+                              </div>
+                              <!-- /.col-md-6 -->
+                              <button type="submit" class="btn btn-primary pull-right mt-10" (click)="addMiniUrl()">Submit</button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <!-- /.col-md-12 -->
+          <div class="col-md-3"></div>
+        </div>
+      <!-- /.row -->
+
+
+  </div>
+  <!-- /.container-fluid -->
+</section>
+
+
+<div class="wrapper">
+  
+  
+  <div class="table">
+    
+    <div class="trow header blue">
+      <div class="cell">
+        ID
+      </div>
+      <div class="cell">
+        Alias
+      </div>
+      <div class="cell">
+        Url
+      </div>
+      <div class="cell">
+        Link
+      </div>
+      <div class="cell">
+          User
+        </div>
+      <div class="cell">
+        Clicks
+      </div>
+      <div class="cell">
+          Delete
+        </div>
+    </div>
+    
+    <div *ngFor="let url of urls" class="trow">
+      <div class="cell">
+        {{url.id}}
+      </div>
+      <div class="cell">
+        {{url.alias}}
+      </div>
+      <div class="cell">
+        <a href={{url.url}}>{{url.url}}</a>
+      </div>
+      <div class="cell">
+        <a href={{url.link}}>{{url.id}} </a>
+      </div>
+      <div class="cell">
+          {{url.user}} 
+        </div>
+      <div class="cell">
+        {{url.clicks}}
+      </div>
+      <div class="cell">
+          <button type="button" (click)="delete(url.id)" class="btn btn-danger">X</button>
+       </div>
+    </div>
+    
+  </div>
+  
+</div>
+

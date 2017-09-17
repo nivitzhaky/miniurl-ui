@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {  HeaderComponent} from './components/header/header.component'
+import {  MiniurlTableComponent} from './components/miniurl-table/miniurl-table.component'
+
 
 @Component({
   selector: 'app-root',
