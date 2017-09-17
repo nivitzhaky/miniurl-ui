@@ -6,8 +6,8 @@
         </div>
         <!-- /.col-sm-6 -->
         <div class="col-sm-6 right-side">
-            <div class="dropdown pull-right" dropdown>
-            	<button dropdownToggle class="btn btn-default dropdown-toggle" type="button" id="menu14" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="dropdown pull-right" dropdown>
+              <button dropdownToggle class="btn btn-default dropdown-toggle" type="button" id="menu14" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             		<i class="fa fa-bars"></i> {{username}}
             		<span class="caret"></span>
             	</button>
@@ -50,6 +50,7 @@
                 </div>
             </div>
         </div>
+
         <!-- /.col-sm-6 text-right -->
     </div>
     <!-- /.row -->
@@ -60,12 +61,14 @@
       <div class="row">
           <div class="col-md-3"></div>
           <div class="col-md-6">
+              <button (click)="isCollapsed = !isCollapsed" class="btn btn-primary" type="button" >
+                	Create URL
+                </button>
+                <div class="collapse mt-15" id="collapseExample" (collapsed)="collapsed($event)"
+                         (expanded)="expanded($event)"
+                         [collapse]="isCollapsed">
+        
               <div class="panel">
-                  <div class="panel-heading">
-                      <div class="panel-title">
-                          <h5>Create URL</h5>
-                      </div>
-                  </div>
                   <div class="panel-body">
 
                       <form class="p-20">
@@ -90,6 +93,7 @@
                       </form>
                   </div>
               </div>
+                </div>
           </div>
           <!-- /.col-md-12 -->
           <div class="col-md-3"></div>

@@ -15,7 +15,16 @@ export class MiniurlTableComponent implements OnInit {
   addalias : string = "";
   username : string = "";
   loginouttext :string = "LOGIN";
- 
+  public isCollapsed: boolean = true;
+  
+    public collapsed(event: any): void {
+      console.log(event);
+    }
+  
+    public expanded(event: any): void {
+      console.log(event);
+    }
+  
    constructor(private dataService:DataService,private _renderer2: Renderer2, @Inject(DOCUMENT) private _document ){ }
    ngOnInit() {
 

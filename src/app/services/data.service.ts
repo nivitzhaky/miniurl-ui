@@ -5,7 +5,7 @@ import { Response } from '@angular/http';
 import { Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs';
 
-var host = "ec2-13-59-172-49.us-east-2.compute.amazonaws.com:9003";// "http://localhost:9000"; //ec2-13-59-172-49.us-east-2.compute.amazonaws.com:9000
+var host =  "http://localhost:9000"; //ec2-13-59-172-49.us-east-2.compute.amazonaws.com:9000
 
 @Injectable()
 export class DataService {
